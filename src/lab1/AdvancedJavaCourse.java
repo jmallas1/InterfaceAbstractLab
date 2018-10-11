@@ -8,9 +8,9 @@ import javax.swing.JOptionPane;
  * @author      your name goes here
  * @version     1.00
  */
-public class AdvancedJavaCourse {
-    String courseName;
-    private String courseNumber;
+public class AdvancedJavaCourse extends Course {
+    // String courseName;
+    // private String courseNumber;
     private double credits;
     private String prerequisites;
 
