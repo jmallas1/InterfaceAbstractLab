@@ -12,18 +12,34 @@ public abstract class Course
     Double credits;
     String prerequisites;
 
-    public final void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public final void setCourseName(String courseName) throws IllegalArgumentException
+    {
+        if(courseName != null && !courseName.equals(""))
+        {
+            this.courseName = courseName;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid course name");
+        }
     }
 
     /**
      * Method for retrieving course name
      * @return String representation for courseName
      */
-    public final String getCourseName() { return courseName; }
+    public final String getCourseName(){ return courseName; }
 
-    public final void setCourseNumber(String courseNumber) {
-        this.courseNumber = courseNumber;
+    public final void setCourseNumber(String courseNumber) throws IllegalArgumentException
+    {
+        if (courseNumber != null && !courseNumber.equals(""))
+        {
+            this.courseNumber = courseNumber;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid course number");
+        }
     }
 
     /**
@@ -47,7 +63,7 @@ public abstract class Course
         }
         else
         {
-            throw new IllegalArgumentException("Course must be worth more than .5 and less than 4.0 credits");
+            throw new IllegalArgumentException("Invalid credit definition");
         }
     }
     public final Double getCredits() { return credits; }
@@ -66,7 +82,7 @@ public abstract class Course
         }
         else
         {
-            throw new IllegalArgumentException("Course must have pre-requisites");
+            throw new IllegalArgumentException("Invalid pre-requisite");
         }
     }
     public final String getPrerequisites() {

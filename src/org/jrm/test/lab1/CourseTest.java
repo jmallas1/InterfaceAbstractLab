@@ -14,7 +14,7 @@ class CourseTest {
     @BeforeEach
     void setUp()
     {
-        someCourse = new AdvancedJavaCourse("Advanced Java", "100-100");
+        someCourse = new AdvancedJavaCourse("Advanced Java", "100-100", 4d, "Introduction to Programming");
         someCourse.setCredits(4d); // Assume "happy path" in setUp & overridden method..
         someCourse.setPrerequisites("Much java wins"); // Assume "happy path" in setUp & overridden method...
     }
@@ -23,6 +23,7 @@ class CourseTest {
     void setCourseName() {
         someCourse.setCourseName("Underwater basket weaving");
         assertEquals("Underwater basket weaving", someCourse.getCourseName(), "New name");
+        assertThrows(IllegalArgumentException.class, () -> someCourse = new AdvancedJavaCourse(null, "100-200", 4d, "Introduction to Programming"), "Courses must have a non-null name");
     }
 
     @Test
@@ -36,6 +37,7 @@ class CourseTest {
     {
         someCourse.setCourseNumber("123-456");
         assertEquals("123-456", someCourse.getCourseNumber(), "New number");
+        assertThrows(IllegalArgumentException.class, () -> someCourse = new AdvancedJavaCourse("Advanced Java", "", 4d, "Introduction to Programming"), "Courses must have a non-null number");
     }
 
     @Test

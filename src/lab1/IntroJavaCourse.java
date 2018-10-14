@@ -14,9 +14,11 @@ package lab1;
  */
 public class IntroJavaCourse extends Course {
 
-    public IntroJavaCourse(String courseName, String courseNumber) {
-        this.courseName = courseName;
-        this.courseNumber = courseNumber;
+    public IntroJavaCourse(String courseName, String courseNumber, Double credits, String prerequisites) {
+        this.setCourseName(courseName);
+        this.setCourseNumber(courseNumber);
+        this.setCredits(credits);
+        this.setPrerequisites(prerequisites);
     }
 
     /**

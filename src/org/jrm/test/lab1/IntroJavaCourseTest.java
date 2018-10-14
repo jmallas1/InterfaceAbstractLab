@@ -13,7 +13,7 @@ class IntroJavaCourseTest {
 
     @BeforeEach
     void setUp() {
-        ijc1 = new lab1.IntroJavaCourse("Introduction to Java", "100-049");
+        ijc1 = new lab1.IntroJavaCourse("Introduction to Java", "100-049", 4d, "Introduction to Programming");
     }
 
     @AfterEach

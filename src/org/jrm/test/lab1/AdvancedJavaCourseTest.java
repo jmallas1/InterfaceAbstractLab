@@ -11,7 +11,7 @@ class AdvancedJavaCourseTest {
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
-        ajc1 = new lab1.AdvancedJavaCourse("Advanced Java", "100-099");
+        ajc1 = new lab1.AdvancedJavaCourse("Advanced Java", "100-099", 4d, "Introduction to Java");
     }
 
     @org.junit.jupiter.api.AfterEach
