@@ -1,5 +1,7 @@
 package org.jrm.test;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AdvancedJavaCourseTest {
@@ -33,5 +35,11 @@ class AdvancedJavaCourseTest {
     void getCourseNumber() {
         assertEquals("100-099", ajc1.getCourseNumber(), "Number should be 100-099");
         assertEquals("100-100", ajc2.getCourseNumber(), "Number should be 100-100");
+    }
+
+    @org.junit.jupiter.api.Test
+    void setCredits() {
+        assertThrows(IllegalArgumentException.class, () -> ajc1.setCredits(5d), "Credits cannot exceed 4.0");
+        assertThrows(IllegalArgumentException.class, () -> ajc1.setCredits(.4d), "Credits cannot be less than .5");
     }
 }
