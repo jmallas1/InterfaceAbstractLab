@@ -1,4 +1,4 @@
-package org.jrm.test;
+package org.jrm.test.lab1;
 
 import lab1.AdvancedJavaCourse;
 import lab1.Course;
