@@ -9,9 +9,16 @@ public class MainLab1
     {
         List<Course> courses = new ArrayList();
 
-        courses.add(new IntroToProgrammingCourse("Introduction to programming", "100-025", 4d, "" ));
-        courses.add(new IntroJavaCourse("Introduction to java", "100-050", 5d, "Introduction to Programming"));
-        courses.add(new AdvancedJavaCourse("Advanced java", "100-100", 5d, "Introduction to Java"));
+        try
+        {
+            courses.add(new IntroToProgrammingCourse("Introduction to programming", "100-025", 5d, ""));
+            courses.add(new IntroJavaCourse("Introduction to java", "100-050", 4d, "Introduction to Programming"));
+            courses.add(new AdvancedJavaCourse("Advanced java", "100-100", 5d, "Introduction to Java"));
+        }
+        catch (IllegalArgumentException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
 
         for (Course aCourse : courses)
         {

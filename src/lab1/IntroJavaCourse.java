@@ -39,20 +39,20 @@ public class IntroJavaCourse extends Course {
     }
 
     /**
-     * Overridden method allows for credits to escape default boundry of .5-4.0 and instead allows for 0-5.0
+     * Overridden method allows for credits to escape default boundary of .5-4.0 and instead allows for 0-5.0
      * @param credits Double representation of credits
      * @throws IllegalArgumentException When credits are attempted to be set less than 0 or more than 5.0
      */
     @Override
     public void setCredits(Double credits) throws IllegalArgumentException
     {
-        if(credits <= 0 || credits > 5.0)
+        if(credits >= 0 && credits <= 4.0)
         {
-            throw new IllegalArgumentException("Course must be worth more than 0 and less than / equal to 5.0 credits");
+            this.credits = credits;
         }
         else
         {
-            this.credits = credits;
+            throw new IllegalArgumentException("Course must be worth more than 0 and less than / equal to 4.0 credits");
         }
     }
 

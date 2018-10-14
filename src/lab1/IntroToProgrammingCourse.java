@@ -25,7 +25,7 @@ public class IntroToProgrammingCourse extends Course
     @Override
     public void setCredits(Double credits)
     {
-        if(credits >= 0.5 || credits <= 4.0)
+        if(credits >= 0.5 && credits <= 5.0)
         {
             this.credits = credits;
         }

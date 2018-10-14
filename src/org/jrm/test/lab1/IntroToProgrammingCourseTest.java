@@ -21,14 +21,16 @@ class IntroToProgrammingCourseTest {
     }
 
     @Test
-    void getCourseNumber() {
+    void setCredits()
+    {
+        assertThrows(IllegalArgumentException.class, () -> ipc1.setCredits(-1d), "Credits must be non-zero");
     }
 
     @Test
-    void getCredits() {
-    }
+    void setPrerequisites()
+    {
+        ipc1.setPrerequisites(null);
 
-    @Test
-    void getCourseName() {
+        assertEquals("", ipc1.getPrerequisites(), "Prerequisites of null yeild empty string");
     }
 }
