@@ -1,12 +1,17 @@
 package lab1;
 
-import javax.swing.JOptionPane;
-
 /**
  * Describe responsibilities here.
+ * Class model for Advanced Java course. Inherits all methods and properties from superclass "Course"
+ * Any class should be able to get and set the following properties:
+ *     String courseName;
+ *     String courseNumber;
+ *     Double credits;
+ *     String prerequisites;
+ * Methods for setting credits and prerequisites are overridable for varying "business need"
  *
- * @author      your name goes here
- * @version     1.00
+ * @author      Jared Mallas
+ * @version     1.1
  */
 public class AdvancedJavaCourse extends Course {
     // String courseName;  INHERITED FROM SUPERCLASS
