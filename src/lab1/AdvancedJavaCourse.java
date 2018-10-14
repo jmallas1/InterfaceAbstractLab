@@ -9,8 +9,8 @@ import javax.swing.JOptionPane;
  * @version     1.00
  */
 public class AdvancedJavaCourse extends Course {
-    // String courseName;
-    // private String courseNumber;
+    // String courseName;  INHERITED FROM SUPERCLASS
+    // private String courseNumber;  INHERITED FROM SUPERCLASS
     private double credits;
     private String prerequisites;
 
@@ -41,17 +41,13 @@ public class AdvancedJavaCourse extends Course {
         this.setCredits(credits);
     }
 
-    public String getCourseName() {
-        return courseName;
-    }
+    // public String getCourseName() { return courseName; }
 
     public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
 
-    public String getCourseNumber() {
-        return courseNumber;
-    }
+    // public String getCourseNumber() { return courseNumber; }
 
     public void setCourseNumber(String courseNumber) {
         this.courseNumber = courseNumber;
