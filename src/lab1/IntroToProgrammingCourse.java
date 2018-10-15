@@ -27,7 +27,7 @@ public class IntroToProgrammingCourse extends Course
      * @param credits Double representation of credits
      */
     @Override
-    public void setCredits(Double credits)
+    public void setCredits(Double credits) throws IllegalArgumentException
     {
         if(credits >= 0.5 && credits <= 5.0)
         {

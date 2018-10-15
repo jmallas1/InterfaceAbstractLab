@@ -10,6 +10,7 @@ public class IntroToProgrammingCourse implements Course {
     private String courseName;
     private String courseNumber;
     private double credits;
+    private String prerequisites;
 
     public IntroToProgrammingCourse(String courseName, String courseNumber, Double credits, String prerequisites) {
         this.setCourseName(courseName);
@@ -18,43 +19,82 @@ public class IntroToProgrammingCourse implements Course {
         this.setPrerequisites(prerequisites);
     }
 
+    /**
+     * Setter for courseName which doesn't allow null or empty string
+     * @param courseName Name of course
+     * @throws IllegalArgumentException when null or empty string is attempted
+     */
     @Override
-    public void setCourseName(String courseName) {
-
+    public final void setCourseName(String courseName) throws IllegalArgumentException
+    {
+        if(courseName != null && !courseName.equals(""))
+        {
+            this.courseName = courseName;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid course name");
+        }
     }
 
     @Override
-    public String getCourseName() {
-        return null;
-    }
+    public final String getCourseName(){ return courseName; }
 
     @Override
-    public void setCourseNumber(String courseNumber) {
-
+    public final void setCourseNumber(String courseNumber) throws IllegalArgumentException
+    {
+        if (courseNumber != null && !courseNumber.equals(""))
+        {
+            this.courseNumber = courseNumber;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid course number");
+        }
     }
 
     @Override
     public String getCourseNumber() {
-        return null;
+        return this.courseNumber;
     }
 
     @Override
-    public void setCredits(Double credits) {
-
+    public void setCredits(Double credits) throws IllegalArgumentException
+    {
+        if(credits >= 0.5 && credits <= 5.0)
+        {
+            this.credits = credits;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid credit definition");
+        }
     }
 
     @Override
     public Double getCredits() {
-        return null;
+        return this.credits;
     }
 
+    /**
+     * Overridden method allows prerequisites to be null or an empty string.
+     * If "null" is passed, prerequisites will be set to ""
+     * @param prerequisites String representation of prerequisites.
+     */
     @Override
     public void setPrerequisites(String prerequisites) {
-
+        if (prerequisites == null)
+        {
+            this.prerequisites = "";
+        }
+        else
+        {
+            this.prerequisites = prerequisites;
+        }
     }
 
     @Override
     public String getPrerequisites() {
-        return null;
+        return this.prerequisites;
     }
 }
