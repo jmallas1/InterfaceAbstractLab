@@ -22,6 +22,10 @@ public class IntroToProgrammingCourse extends Course
         this.setPrerequisites(prerequisites);
     }
 
+    /**
+     * Overridden credits setter allowing for credits to be up to 5
+     * @param credits Double representation of credits
+     */
     @Override
     public void setCredits(Double credits)
     {

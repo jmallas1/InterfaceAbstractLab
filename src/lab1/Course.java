@@ -12,6 +12,11 @@ public abstract class Course
     Double credits;
     String prerequisites;
 
+    /**
+     * Setter for courseName which doesn't allow null or empty string
+     * @param courseName Name of course
+     * @throws IllegalArgumentException when null or empty string is attempted
+     */
     public final void setCourseName(String courseName) throws IllegalArgumentException
     {
         if(courseName != null && !courseName.equals(""))
