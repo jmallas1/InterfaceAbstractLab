@@ -1,62 +1,58 @@
 package lab1;
 
-import javax.swing.JOptionPane;
-
 /**
- * Describe responsibilities here. NOTE: this class has NO PREREQUISITES!
- * Do not change this fact.
+ * Class model for intro to programing course. Inherits MOST methods and properties from superclass "Course"
+ * Any class should be able to get and set the following properties:
+ *     String courseName;
+ *     String courseNumber;
+ *     Double credits;
+ *     String prerequisites;
+ * Methods for setting credits and prerequisites are overridable for varying "business need"
  *
- * @author      your name goes here
- * @version     1.00
+ * @author      Jared Mallas
+ * @version     1.1
  */
-public class IntroToProgrammingCourse {
-    private String courseName;
-    String courseNumber;
-    private double credits;
+public class IntroToProgrammingCourse extends Course
+{
 
-    public IntroToProgrammingCourse(String courseName, String courseNumber) {
+    public IntroToProgrammingCourse(String courseName, String courseNumber, Double credits, String prerequisites) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
+        this.setCredits(credits);
+        this.setPrerequisites(prerequisites);
     }
 
-    public String getCourseNumber() {
-        return courseNumber;
-    }
-
-    public final void setCourseNumber(String courseNumber) {
-        if(courseNumber == null || courseNumber.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
+    /**
+     * Overridden credits setter allowing for credits to be up to 5
+     * @param credits Double representation of credits
+     */
+    @Override
+    public void setCredits(Double credits)
+    {
+        if(credits >= 0.5 && credits <= 5.0)
+        {
+            this.credits = credits;
         }
-        this.courseNumber = courseNumber;
-    }
-
-    public double getCredits() {
-        return credits;
-    }
-
-    public void setCredits(double credits) {
-        if(credits < 0.5 || credits > 4.0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
+        else
+        {
+            throw new IllegalArgumentException("Invalid credit definition");
         }
-        this.credits = credits;
     }
 
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public final void setCourseName(String courseName) {
-        if(courseName == null || courseName.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
-            System.exit(0);
+    /**
+     * Overridden method allows prerequisites to be null or an empty string.
+     * If "null" is passed, prerequisites will be set to ""
+     * @param prerequisites String representation of prerequisites.
+     */
+    @Override
+    public void setPrerequisites(String prerequisites) {
+        if (prerequisites == null)
+        {
+            this.prerequisites = "";
         }
-        this.courseName = courseName;
+        else
+        {
+            this.prerequisites = prerequisites;
+        }
     }
-
-    
 }
