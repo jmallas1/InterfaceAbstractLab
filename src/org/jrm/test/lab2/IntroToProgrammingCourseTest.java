@@ -1,6 +1,6 @@
 package org.jrm.test.lab2;
 
-import lab1.IntroToProgrammingCourse;
+import lab2.IntroToProgrammingCourse;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +13,7 @@ class IntroToProgrammingCourseTest {
 
     @BeforeEach
     void setUp() {
-        ipc2 = new lab1.IntroToProgrammingCourse("Introduction to Programming", "100-024", 3d,null);
+        ipc2 = new IntroToProgrammingCourse("Introduction to Programming", "100-024", 3d,null);
     }
 
     @AfterEach

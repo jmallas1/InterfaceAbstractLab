@@ -1,6 +1,6 @@
 package org.jrm.test.lab2;
 
-import lab1.IntroJavaCourse;
+import lab2.IntroJavaCourse;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
