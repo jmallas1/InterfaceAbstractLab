@@ -83,14 +83,15 @@ public class IntroJavaCourse implements Course {
      * @param prerequisites String representation of prerequisites.
      */
     @Override
-    public void setPrerequisites(String prerequisites) {
-        if (prerequisites == null)
+    public void setPrerequisites(String prerequisites)
+    {
+        if(prerequisites != null && prerequisites.length() > 0)
         {
-            this.prerequisites = "";
+            this.prerequisites = prerequisites;
         }
         else
         {
-            this.prerequisites = prerequisites;
+            throw new IllegalArgumentException("Invalid pre-requisite");
         }
     }
 
