@@ -1,10 +1,12 @@
 package lab2;
 
-import javax.swing.JOptionPane;
-
 /**
  * Class model for Advanced Java course. Implements methods from Course interface
- *
+ * Interface implementation should force getting and setting of the following instance properties:
+ *     String courseName;
+ *     String courseNumber;
+ *     Double credits;
+ *     String prerequisites;
  * @author      Jared Mallas
  * @version     1.1
  */
@@ -21,6 +23,11 @@ public class AdvancedJavaCourse implements Course {
         this.setPrerequisites(prerequisites);
     }
 
+    /**
+     * Setter for courseName which doesn't allow null or empty string
+     * @param courseName Name of course
+     * @throws IllegalArgumentException when null or empty string is attempted
+     */
     @Override
     public void setCourseName(String courseName) throws IllegalArgumentException
     {
@@ -34,9 +41,18 @@ public class AdvancedJavaCourse implements Course {
         }
     }
 
+    /**
+     * Forced override for getCourseName
+     * @return String representation of courseName
+     */
     @Override
     public String getCourseName(){ return courseName; }
 
+    /**
+     * Forced override of setCourseNumber. Forces non-null value by way of throwing an exception.
+     * @param courseNumber String representation of a course number
+     * @throws IllegalArgumentException when null or empty string is passed
+     */
     @Override
     public void setCourseNumber(String courseNumber) throws IllegalArgumentException
     {
@@ -50,9 +66,18 @@ public class AdvancedJavaCourse implements Course {
         }
     }
 
+    /**
+     * Forced override of getCourseNumber
+     * @return String representation of courseNumber
+     */
     @Override
     public String getCourseNumber() { return this.courseNumber; }
 
+    /**
+     * Forced override for setCredits forcing a range between 0.5 and 4.0
+     * @param credits Double representation of credits
+     * @throws IllegalArgumentException when credits less than 0.5 or credits greater than 4.0
+     */
     @Override
     public void setCredits(Double credits) throws IllegalArgumentException
     {
@@ -66,11 +91,20 @@ public class AdvancedJavaCourse implements Course {
         }
     }
 
+    /**
+     * Forced override of getCredits
+     * @return Double representation of credits
+     */
     @Override
     public Double getCredits() {
         return this.credits;
     }
 
+    /**
+     * Forced override of setPrerequisites forcing a non-null and non-empty string
+     * @param prerequisites String representation of prerequisites.
+     * @throws IllegalArgumentException when null or empty string is passed
+     */
     @Override
     public void setPrerequisites(String prerequisites) throws IllegalArgumentException
     {
@@ -84,6 +118,10 @@ public class AdvancedJavaCourse implements Course {
         }
     }
 
+    /**
+     * forced override of getPrerequisites
+     * @return String representation of prerequisites
+     */
     @Override
     public String getPrerequisites() { return this.prerequisites; }
 }

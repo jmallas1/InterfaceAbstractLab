@@ -1,13 +1,18 @@
 package lab2;
 
 /**
- * Describe responsibilities here.
+ * Class model for Intro Java course. Implements methods from "Course" interface
+ * Implementation forces getter and setter methods of the following instance properties:
+ *     String courseName;
+ *     String courseNumber;
+ *     Double credits;
+ *     String prerequisites;
  *
- * @author      your name goes here
- * @version     1.00
+ * @author      Jared Mallas
+ * @version     1.1
  */
 public class IntroJavaCourse implements Course {
-    String courseName;
+    private String courseName;
     private String courseNumber;
     private double credits;
     private String prerequisites;
@@ -37,9 +42,18 @@ public class IntroJavaCourse implements Course {
         }
     }
 
+    /**
+     * Forced override for getCourseName
+     * @return String representation of courseName
+     */
     @Override
     public final String getCourseName(){ return courseName; }
 
+    /**
+     * Forced override of setCourseNumber. Forces non-null value by way of throwing an exception.
+     * @param courseNumber String representation of a course number
+     * @throws IllegalArgumentException when null or empty string is passed
+     */
     @Override
     public final void setCourseNumber(String courseNumber) throws IllegalArgumentException
     {
@@ -53,13 +67,17 @@ public class IntroJavaCourse implements Course {
         }
     }
 
+    /**
+     * Forced override of getCourseNumber
+     * @return String representation of courseNumber
+     */
     @Override
     public final String getCourseNumber() { return courseNumber; }
 
     /**
-     * Overridden method allows for credits to escape default boundary of .5-4.0 and instead allows for 0-5.0
+     * Forced override for setCredits forcing a range between 0 and 4.0
      * @param credits Double representation of credits
-     * @throws IllegalArgumentException When credits are attempted to be set less than 0 or more than 5.0
+     * @throws IllegalArgumentException when credits less than 0 or credits greater than 4.0
      */
     @Override
     public void setCredits(Double credits) throws IllegalArgumentException
@@ -74,16 +92,20 @@ public class IntroJavaCourse implements Course {
         }
     }
 
+    /**
+     * Forced override of getCredits
+     * @return Double representation of credits
+     */
     @Override
     public final Double getCredits() { return credits; }
 
     /**
-     * Overridden method allows prerequisites to be null or an empty string.
-     * If "null" is passed, prerequisites will be set to ""
+     * Forced override of setPrerequisites forcing a non-null and non-empty string
      * @param prerequisites String representation of prerequisites.
+     * @throws IllegalArgumentException when null or empty string is passed
      */
     @Override
-    public void setPrerequisites(String prerequisites)
+    public void setPrerequisites(String prerequisites) throws IllegalArgumentException
     {
         if(prerequisites != null && prerequisites.length() > 0)
         {
@@ -95,6 +117,10 @@ public class IntroJavaCourse implements Course {
         }
     }
 
+    /**
+     * forced override of getPrerequisites
+     * @return String representation of prerequisites
+     */
     @Override
     public final String getPrerequisites() {
         return prerequisites;

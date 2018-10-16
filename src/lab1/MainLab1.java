@@ -14,6 +14,7 @@ import java.util.List;
  * worry about the impacts to your own code, but every other class that extended your code. This
  * seems like an anti-pattern to me and as I don't like the idea of massive regression testing,
  * I rarely use class inheritance.
+ *
  * @author Jared Mallas
  * @version 1.0
  */
@@ -48,7 +49,7 @@ public class MainLab1
 
         for (Course aCourse : courses)
         {
-            out.report(aCourse.courseName + " " + aCourse.getCourseNumber() + " " + aCourse.getPrerequisites() + " " + aCourse.getCredits());
+            out.report(aCourse.getCourseName() + " " + aCourse.getCourseNumber() + " " + aCourse.getPrerequisites() + " " + aCourse.getCredits());
             // System.out.println();
         }
     }

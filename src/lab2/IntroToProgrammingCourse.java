@@ -1,10 +1,15 @@
 package lab2;
 
 /**
- * Describe responsibilities here.
+ * Class model for intro to programming course. Implements methods from Course interface
+ * Implementation forces getters and setters of the following instance properties:
+ *     String courseName;
+ *     String courseNumber;
+ *     Double credits;
+ *     String prerequisites;
  *
- * @author      your name goes here
- * @version     1.00
+ * @author      Jared Mallas
+ * @version     1.1
  */
 public class IntroToProgrammingCourse implements Course {
     private String courseName;
@@ -37,9 +42,18 @@ public class IntroToProgrammingCourse implements Course {
         }
     }
 
+    /**
+     * Forced override for getCourseName
+     * @return String representation of courseName
+     */
     @Override
     public final String getCourseName(){ return courseName; }
 
+    /**
+     * Forced override of setCourseNumber. Forces non-null value by way of throwing an exception.
+     * @param courseNumber String representation of a course number
+     * @throws IllegalArgumentException when null or empty string is passed
+     */
     @Override
     public final void setCourseNumber(String courseNumber) throws IllegalArgumentException
     {
@@ -53,11 +67,20 @@ public class IntroToProgrammingCourse implements Course {
         }
     }
 
+    /**
+     * Forced override of getCourseNumber
+     * @return String representation of courseNumber
+     */
     @Override
     public String getCourseNumber() {
         return this.courseNumber;
     }
 
+    /**
+     * Forced override for setCredits forcing a range between .5 and 5.0
+     * @param credits Double representation of credits
+     * @throws IllegalArgumentException when credits less than 0.5 or credits greater than 5.0
+     */
     @Override
     public void setCredits(Double credits) throws IllegalArgumentException
     {
@@ -71,6 +94,10 @@ public class IntroToProgrammingCourse implements Course {
         }
     }
 
+    /**
+     * Forced override of getCredits
+     * @return Double representation of credits
+     */
     @Override
     public Double getCredits() {
         return this.credits;
@@ -93,6 +120,10 @@ public class IntroToProgrammingCourse implements Course {
         }
     }
 
+    /**
+     * forced override of getPrerequisites
+     * @return String representation of prerequisites
+     */
     @Override
     public String getPrerequisites() {
         return this.prerequisites;
