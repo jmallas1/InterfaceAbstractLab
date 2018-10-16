@@ -22,10 +22,10 @@ public class MainLab1
 {
     public static void main(String[] args)
     {
-        int outputClassPicker = 1;
+        int outputClassPicker = 0;
         Outputter out;
 
-        List<Course> courses = new ArrayList();
+        List<Course> courses = new ArrayList<>();
 
         if (outputClassPicker == 1)
         {

@@ -29,7 +29,7 @@ import java.util.List;
         int outputClassPicker = 1;
         Outputter out;
 
-        List<Course> courses = new ArrayList();
+        List<Course> courses = new ArrayList<>();
 
         if (outputClassPicker == 1)
         {
