@@ -1,75 +1,127 @@
 package lab2;
 
-import javax.swing.JOptionPane;
-
 /**
- * Describe responsibilities here.
- *
- * @author      your name goes here
- * @version     1.00
+ * Class model for Advanced Java course. Implements methods from Course interface
+ * Interface implementation should force getting and setting of the following instance properties:
+ *     String courseName;
+ *     String courseNumber;
+ *     Double credits;
+ *     String prerequisites;
+ * @author      Jared Mallas
+ * @version     1.1
  */
-public class AdvancedJavaCourse {
+public class AdvancedJavaCourse implements Course {
     private String courseName;
     private String courseNumber;
     private double credits;
     private String prerequisites;
 
-    public AdvancedJavaCourse(String courseName, String courseNumber) {
+    public AdvancedJavaCourse(String courseName, String courseNumber, Double credits, String prerequisites) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
+        this.setCredits(credits);
+        this.setPrerequisites(prerequisites);
     }
 
-    public String getCourseNumber() {
-        return courseNumber;
-    }
-
-    public final void setCourseNumber(String courseNumber) {
-        if(courseNumber == null || courseNumber.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
+    /**
+     * Setter for courseName which doesn't allow null or empty string
+     * @param courseName Name of course
+     * @throws IllegalArgumentException when null or empty string is attempted
+     */
+    @Override
+    public void setCourseName(String courseName) throws IllegalArgumentException
+    {
+        if(courseName != null && !courseName.equals(""))
+        {
+            this.courseName = courseName;
         }
-        this.courseNumber = courseNumber;
-    }
-
-    public double getCredits() {
-        return credits;
-    }
-
-    public void setCredits(double credits) {
-        if(credits < 0.5 || credits > 4.0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
+        else
+        {
+            throw new IllegalArgumentException("Invalid course name");
         }
-        this.credits = credits;
     }
 
-    public String getPrerequisites() {
-        return prerequisites;
-    }
+    /**
+     * Forced override for getCourseName
+     * @return String representation of courseName
+     */
+    @Override
+    public String getCourseName(){ return courseName; }
 
-    public void setPrerequisites(String prerequisites) {
-        if(prerequisites == null || prerequisites.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: prerequisites cannot be null of empty string");
-            System.exit(0);
+    /**
+     * Forced override of setCourseNumber. Forces non-null value by way of throwing an exception.
+     * @param courseNumber String representation of a course number
+     * @throws IllegalArgumentException when null or empty string is passed
+     */
+    @Override
+    public void setCourseNumber(String courseNumber) throws IllegalArgumentException
+    {
+        if (courseNumber != null && !courseNumber.equals(""))
+        {
+            this.courseNumber = courseNumber;
         }
-        this.prerequisites = prerequisites;
-    }
-
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public final void setCourseName(String courseName) {
-        if(courseName == null || courseName.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
-            System.exit(0);
+        else
+        {
+            throw new IllegalArgumentException("Invalid course number");
         }
-        this.courseName = courseName;
     }
 
-    
+    /**
+     * Forced override of getCourseNumber
+     * @return String representation of courseNumber
+     */
+    @Override
+    public String getCourseNumber() { return this.courseNumber; }
+
+    /**
+     * Forced override for setCredits forcing a range between 0.5 and 4.0
+     * @param credits Double representation of credits
+     * @throws IllegalArgumentException when credits less than 0.5 or credits greater than 4.0
+     */
+    @Override
+    public void setCredits(Double credits) throws IllegalArgumentException
+    {
+        if(credits > 0.5 && credits <= 4.0)
+        {
+            this.credits = credits;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid credit definition");
+        }
+    }
+
+    /**
+     * Forced override of getCredits
+     * @return Double representation of credits
+     */
+    @Override
+    public Double getCredits() {
+        return this.credits;
+    }
+
+    /**
+     * Forced override of setPrerequisites forcing a non-null and non-empty string
+     * @param prerequisites String representation of prerequisites.
+     * @throws IllegalArgumentException when null or empty string is passed
+     */
+    @Override
+    public void setPrerequisites(String prerequisites) throws IllegalArgumentException
+    {
+        if(prerequisites != null && prerequisites.length() > 0)
+        {
+            this.prerequisites = prerequisites;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid pre-requisite");
+        }
+    }
+
+    /**
+     * forced override of getPrerequisites
+     * @return String representation of prerequisites
+     */
+    @Override
+    public String getPrerequisites() { return this.prerequisites; }
 }

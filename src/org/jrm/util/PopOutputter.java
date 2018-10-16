@@ -1,4 +1,4 @@
-package lab1;
+package org.jrm.util;
 
 import javax.swing.*;
 
