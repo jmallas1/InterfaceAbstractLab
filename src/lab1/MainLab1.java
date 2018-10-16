@@ -1,5 +1,7 @@
 package lab1;
 
+import org.jrm.util.*;
+
 import java.util.ArrayList;
 import java.util.List;
 

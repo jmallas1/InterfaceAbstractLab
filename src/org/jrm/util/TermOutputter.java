@@ -1,4 +1,4 @@
-package lab1;
+package org.jrm.util;
 
 /**
  * Implementation of an "outputter" leveraging System.out
